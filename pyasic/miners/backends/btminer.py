@@ -960,7 +960,7 @@ class BTMinerV3(StockFirmware):
     async def fault_light_on(self) -> bool:
         try:
             data = await self.rpc.set_system_led(
-                leds=[{"color": "red", "period": 60, "duration": 20, "start": 0}]
+                leds=[{"color": "red", "period": 200, "duration": 100, "start": 0}]
             )
         except APIError:
             return False
